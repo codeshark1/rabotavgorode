@@ -383,3 +383,34 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 @media (min-width: $screen-lg-min) {
   .slick-prev {left: -30px;}
 }
+
+
+
+
+
+/* Input mask */
+.shell {
+  position: relative;
+  line-height: 1;
+  span {
+  position: absolute;
+  left: 3px;
+  top: 1px;
+  color: #ccc;
+  pointer-events: none;
+  z-index: -1;
+    i { 
+        font-style: normal;
+      /* any of these 3 will work */
+        color: transparent;
+        opacity: 0;
+        visibility: hidden;
+    }
+  }
+}
+
+input.masked,
+.shell span {
+  background-color: transparent;
+  text-transform: uppercase;
+}

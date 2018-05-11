@@ -5,7 +5,6 @@
 
 
 
-
 html {
 }
 body {	
@@ -35,7 +34,7 @@ a {
 			justify-content: space-between;
 			align-items: center;
 			flex-wrap: wrap;
-			border-bottom: 1px solid $gray;			
+			border-bottom: 1px solid $gray-light;			
 			.b-logo {position: relative; top: -8px;}
 			.b-actions {}
 			.b-region {}
@@ -209,6 +208,11 @@ a {
 		}
 	}
 }
+.nav-menu-main {
+	@media (min-width: $screen-sm-min) {
+		display: block !important;
+	}
+}
 /* ==========================================================================
    CONTENT
    ========================================================================== */
@@ -219,12 +223,11 @@ a {
 }
 
 .main-content {padding: 32px 0}
-.section-major {}
 
 @mixin border() {
-	border: 1px solid $gray;
+	border: 1px solid $gray-light;
 	border-width: 1px 0 1px 0;
-	padding: 16px 0;	
+	padding: 16px 0;
 }
 .h-sec {
 	font-weight: 500;
@@ -234,7 +237,10 @@ a {
 .h-sec_sub-about {color: $action}
 
 .list-columns-1, .list-columns-2 {
-	li {margin-bottom: 16px; @include clearfix();}
+	li {
+		margin-bottom: 16px; 
+		position: relative;
+	}
 	@media (min-width: $screen-xs-min) {
 		display: flex;
 		flex-wrap: wrap;
@@ -313,7 +319,7 @@ a {
 	justify-content: space-between;
 	flex-wrap: wrap;			
 	li {
-		border: 1px solid $gray;
+		border: 1px solid $gray-light;
 		width: 48%;
 		text-align: center;
 		height: 88px;
@@ -332,9 +338,82 @@ a {
 }
 .company-1 {}
 /* ==========================================================================
-   FILTER
+   FORMS
    ========================================================================== */
 
+.form-main {
+	@media (min-width: $screen-md-min) {
+		max-width: 540px;
+		margin: 0 auto;
+	}
+}
+
+.row-form {
+	margin-bottom: 16px;
+	@media (min-width: $screen-sm-min) {
+		display: table;
+		width: 100%;
+	}
+}
+.col-form-1, .col-form-2 {
+	@media (min-width: $screen-sm-min) {
+		display: table-cell;
+		vertical-align: top;
+	}
+}
+.col-form-1 {
+	width: 150px;
+	@media (max-width: $screen-xs-max) {
+		margin-bottom: 8px;
+	}
+	@media (min-width: $screen-sm-min) {
+		padding-top: 6px;
+	}
+}
+.col-form-nopad {padding-top: 0;}
+
+.col-form-company-name {
+	position: relative;	
+}
+.inp-company-type {
+	width: 65px;
+	position: absolute;
+	left: 0;top: 0;
+	height: 36px;
+}
+.inp-company-name {padding-left: 75px !important;}
+
+.form-descript {
+	margin-bottom: 24px;
+}
+.form-hint, .form-error {
+	font-size: .85rem;
+	color: $gray;
+	margin-top: 8px;
+	&:first-child {margin-top: 0;}
+}
+.form-hint {color: $gray;}
+.form-error {color: red;}
+
+
+.col-form-tel {clear: both;}
+.inp-tel {width: 150px !important}
+
+.btn-add-tel, .btn-del-tel {
+	background: none;
+	padding: 0;
+	border: none;
+	font-size: 0;
+	width: 25px;height: 25px;	
+	vertical-align: middle;
+	margin-left: 8px;
+	cursor: pointer;
+}
+.btn-add-tel {background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 512 512' %3E%3Cpath fill='%23f55600' d='M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4zM16 144h64v64c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-64h64c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16h-64V16c0-8.8-7.2-16-16-16H96c-8.8 0-16 7.2-16 16v64H16C7.2 80 0 87.2 0 96v32c0 8.8 7.2 16 16 16z'%3E%3C/path%3E%3C/svg%3E") no-repeat;}
+.btn-del-tel {
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' height='25'%3E%3Cpath fill='%23f55600' d='M0 84V56c0-13.3 10.7-24 24-24h112l9.4-18.7c4-8.2 12.3-13.3 21.4-13.3h114.3c9.1 0 17.4 5.1 21.5 13.3L312 32h112c13.3 0 24 10.7 24 24v28c0 6.6-5.4 12-12 12H12C5.4 96 0 90.6 0 84zm416 56v324c0 26.5-21.5 48-48 48H80c-26.5 0-48-21.5-48-48V140c0-6.6 5.4-12 12-12h360c6.6 0 12 5.4 12 12zm-272 68c0-8.8-7.2-16-16-16s-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208zm96 0c0-8.8-7.2-16-16-16s-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208zm96 0c0-8.8-7.2-16-16-16s-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208z' %3E%3C/path%3E%3C/svg%3E") no-repeat;
+	width: 22px;
+}
 /* ==========================================================================
    - ARTICLE
    ========================================================================== */
