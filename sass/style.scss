@@ -5,12 +5,6 @@
 
 
 
-html {
-}
-body {	
-	
-}
-
 a {
 	color: $link-text;
 }
@@ -23,7 +17,7 @@ a {
 		@include shadow();
 	}
 	&__top {
-		font-size: 14px;		
+		font-size: 14px;
 		@media (max-width: $screen-xs-max) {
 			.b-logo, .b-actions, .b-region {margin-bottom: 16px;}
 		}
@@ -248,7 +242,7 @@ a {
 		li {margin-bottom: 28px;}
 	}
 	@media (min-width: $screen-md-min) {
-		li {}
+	
 	}
 }
 .list-columns-1 {
@@ -279,7 +273,6 @@ a {
 	}
 }
 
-.btn-sub {}
 
 .metro-link {display: inline-block; margin: 0 8px 16px 0;
 	&:hover {text-decoration: underline;}
@@ -336,16 +329,18 @@ a {
 	font-size: 0;
 	margin: 0 auto;
 }
-.company-1 {}
 /* ==========================================================================
    FORMS
    ========================================================================== */
 
 .form-main {
 	@media (min-width: $screen-md-min) {
-		max-width: 540px;
+		max-width: 600px;
 		margin: 0 auto;
 	}
+}
+.form-vacancy {
+	max-width: 100%;
 }
 
 .row-form {
@@ -362,14 +357,15 @@ a {
 	}
 }
 .col-form-1 {
-	width: 150px;
 	@media (max-width: $screen-xs-max) {
 		margin-bottom: 8px;
 	}
 	@media (min-width: $screen-sm-min) {
+		width: 175px;
 		padding-top: 6px;
 	}
 }
+.col-form-2 {padding-left: 4px;}
 .col-form-nopad {padding-top: 0;}
 
 .col-form-company-name {
@@ -383,9 +379,8 @@ a {
 }
 .inp-company-name {padding-left: 75px !important;}
 
-.form-descript {
-	margin-bottom: 24px;
-}
+/* text items */
+.form-descript {margin-bottom: 24px;}
 .form-hint, .form-error {
 	font-size: .85rem;
 	color: $gray;
@@ -399,6 +394,7 @@ a {
 .col-form-tel {clear: both;}
 .inp-tel {width: 150px !important}
 
+/* buttons */
 .btn-add-tel, .btn-del-tel {
 	background: none;
 	padding: 0;
@@ -413,6 +409,129 @@ a {
 .btn-del-tel {
 	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' height='25'%3E%3Cpath fill='%23f55600' d='M0 84V56c0-13.3 10.7-24 24-24h112l9.4-18.7c4-8.2 12.3-13.3 21.4-13.3h114.3c9.1 0 17.4 5.1 21.5 13.3L312 32h112c13.3 0 24 10.7 24 24v28c0 6.6-5.4 12-12 12H12C5.4 96 0 90.6 0 84zm416 56v324c0 26.5-21.5 48-48 48H80c-26.5 0-48-21.5-48-48V140c0-6.6 5.4-12 12-12h360c6.6 0 12 5.4 12 12zm-272 68c0-8.8-7.2-16-16-16s-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208zm96 0c0-8.8-7.2-16-16-16s-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208zm96 0c0-8.8-7.2-16-16-16s-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208z' %3E%3C/path%3E%3C/svg%3E") no-repeat;
 	width: 22px;
+}
+
+.list-vacancy-specializations {
+	overflow: hidden;
+	.list-item {
+		margin-bottom: 16px;
+	}
+	.list-item, .list-sub-item {
+		position: relative;
+		line-height: 1.2;
+		&:after {
+			content: "";
+			height: 1px;
+			width: 8px;
+			position: absolute;
+			background:$gray-light;
+			left: 5px;
+			top: 10px;
+		}
+	}
+	.list-item:last-child,
+	.list-sub-item:last-child {
+		&:before {
+			content: "";
+			left: 5px; 
+			bottom: 100%; 
+			height: 2000em;
+			width: 1px;
+			background: $gray-light;
+			position: absolute;
+		}		
+	}
+	.list-sub-item:last-child:before {bottom: 7px;}
+
+	.field {
+		position: relative;
+		padding-left: 20px;		
+		cursor: pointer;
+		&:before {
+			content: "+";
+			position: absolute;
+			left: 2px;
+			top: 2px;
+			font-family: monospace;			
+			font-size: 14px;
+			z-index: 2;
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 4px;
+			width: 12px;
+			height: 12px;
+			border: 1px solid $gray;
+			display: block;
+			z-index: 1;
+			background: #fff;
+		}
+		&.active:before {content: "-"}
+	}
+	.list-sub {
+		padding-left: 24px;
+		overflow: hidden;		
+	}
+	.list-sub-item {margin-top: 16px; padding-left: 20px;}
+
+	.list-item:after {left: 10px;}
+	label {font-size: 16px;
+		input {top: 3px}
+	}
+}
+
+input.number {
+	width: 100px;
+}
+
+.inp-salary-wrap {
+	display: inline-block;
+	margin-right: 14px;
+}
+
+.input-language-1, .input-language-2 {
+	width: 49%;
+	float: left;
+}
+.input-language-1 {margin-right: 2%;}
+
+.form-package {
+	position: relative;
+	margin-bottom: 20px;
+	display: table;
+	position: relative;
+	width: 100%;
+	.input, .icon, .text {display: table-cell;vertical-align: middle}
+	.icon {width: 50px;text-align: center;}
+	.lbl {
+		font-size: 18px;
+		line-height: 1;
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+
+/* margins */
+.inp-vacancy-town,
+.inp-vacancy-metro,
+.inp-vacancy-specialization,
+.inp-vacancy-car
+{margin-top: 8px !important;}
+
+.lbl-sub,
+.lbl-mg,
+.list-vacancy-specializations
+{
+	margin-top: 16px;
 }
 /* ==========================================================================
    - ARTICLE

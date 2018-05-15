@@ -31,108 +31,11 @@ jQuery(document).ready(function($){
     }
     menu_nested('.menu-categs');
 
-
-
-    /* LISTING VIEW---*/
-    function unsquare() {
-        $('#card-list')
-            .removeClass('card-list-square')
-            .find('.card-list-item-square')
-            .removeClass('card-list-item-square')
-            .addClass('card-list-item');
-        $('#view-type-list').addClass('active').siblings().removeClass('active');
-    }
-
-    function view_type() {
-        $('#view-type-list').click(function(e){
-            e.preventDefault();
-            unsquare();
-        });
-
-        $('#view-type-square').click(function(e){
-            e.preventDefault();
-            $(this).addClass('active').siblings().removeClass('active');
-            $('#card-list')
-                .addClass('card-list-square')
-                .find('.card-list-item')
-                .removeClass('card-list-item')
-                .addClass('card-list-item-square');
-        });        
-    }
-    view_type();
-
-    if( $(window).width() < 992) {
-        unsquare();
-    }
-
-    $(window).resize(function(){
-        if( $(window).width() < 992) {
-            unsquare();
-        }        
-    });
-    /* --LISTING VIEW*/
-
-
-    /*FILTER--*/
-    function filter_toggle() {
-        $('#filter-extra').hide();
-        $('#filter-extra-btn').click(function(){
-            if ( $('#filter-extra').is(':visible')){
-                $('#filter-extra').slideUp();
-                $(this)
-                    .removeClass('active')
-                    .find('span')
-                    .text('Показать Весь Фильтр')
-                ;
-            } else {
-                $('#filter-extra').slideDown();
-                $(this).addClass('active')
-                    .find('span')
-                    .text('Скрыть Весь Фильтр')
-                ;
-            }
+    function list_specializations() {
+        $('#list-specializations').find('.list-sub').hide();
+        $('#list-specializations').find('.field').click(function(){
+            $(this).toggleClass('active').siblings().slideToggle('fast');
         });
     }
-    
-    filter_toggle();
-    /*FILTER--*/
-
-
-    /*CAROUSEL*/
-
-    $('#carousel').slick({
-      speed: 300,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      dots: false,
-      prevArrow: "<button type='button' type='button' class='slick-prev'><i class='fas fa-chevron-left'></i></button>",
-      nextArrow: "<button type='button' type='button' class='slick-next'><i class='fas fa-chevron-right'></i></button>",
-      responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
-        },
-        {
-          breakpoint: 576,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ]
-    });
-
+    list_specializations();
 });

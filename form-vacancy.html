@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Добавление вакансии</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="js/selectivizr-min.js"></script>
+    <![endif]-->
+</head>
+<body class="home">
+<!--[if lt IE 10]>
+    <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
+<![endif]-->
+<header class="header-site">    
+    <button id="nav-toggle" class="but-nav"></button>
+
+    <div class="header-site__wrap">
+        <div class="container">
+            <div class="header-site__top">
+                <div class="b-logo">
+                    <a href="#"><img src="images/logotype.png" alt="RabotaVGorode.ru"></a>
+                </div><!-- /.b-logo -->
+                <div class="b-actions">
+                    <p><a href="#" class="btn btn-2">+ Разместить резюме</a></p>
+                    <p><a href="#" class="btn btn-2">+ Добавить вакансию</a></p>
+                </div><!-- /.b-actions -->
+                <div class="b-region">
+                    <p><a href="#" class="chosen">Санкт-Петербург</a></p>
+                    <div class="b-region__i">
+                        <p class="title">Ваш регион — Санкт-Петербург?</p>
+                        <a href="#" class="btn">Все верно</a>
+                        <a href="#" class="btn">Выбрать другой</a>
+                        <button type="button" class="close"></button>
+                    </div><!-- /.b-region__i -->
+                </div><!-- /.b-region -->
+                <div class="b-login">
+                    <i class="fas fa-lock"></i> <a href="#" class="l-login">Войдите</a> <span class="or">или</span> 
+                    <div class="b-login__reg">
+                        <a href="#" class="l-reg">Зарегистрируйтесь</a>
+                        <ul class="b-login__reg__i">
+                            <li><a href="#">Я работодатель</a></li>
+                            <li><a href="#">Я соискатель</a></li>
+                            <li><a href="#">Предлагаю курсы онлайн</a></li>
+                        </ul>
+                    </div><!-- /.b-login__reg -->
+                </div><!-- /.b-login -->
+            </div><!-- /.header-site__top -->        
+
+            <nav class="navigation-main">
+                <ul role="menu" class="nav-menu-main" id="nav-main">
+                    <li role="menuitem" class="menu-item"><a href="#">Все вакансии</a></li>
+                    <li role="menuitem" class="menu-item"><a href="#">Все резюме</a></li>
+                    <li role="menuitem" class="menu-item"><a href="#">Онлайн обучение</a></li>
+                    <li role="menuitem" class="menu-item"><a href="#">Наши сервисы</a></li>
+                    <li role="menuitem" class="menu-item"><a href="#">Услуги</a></li>
+                </ul>
+            </nav>
+        </div><!-- /.container -->
+    </div><!-- /.header-site__wrap -->
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 content-main">
+                <h1 class="h-sec">Добавление вакансии</h1>                
+
+<form action="#" class="form-main form-vacancy">
+    <div class="row-form">
+        <div class="col-form-1">
+            <label class="lbl" for="vacancy-title">Название вакансии:</label>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <input type="text" id="vacancy-title" placeholder="Напр.: Главный Бухгалтер" class="required" required>
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">
+        <div class="col-form-1 col-form-nopad">
+            <label class="lbl" id="lbl-vacancy-town">Работа в городе:</label>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <label class="lbl-inline"><input class="radio" type="radio" name="vacancy-towns" checked>В одном городе</label>
+            <label class="lbl-inline"><input class="radio" type="radio" name="vacancy-towns">В нескольких городах</label>
+
+            <select aria-labelledby="lbl-vacancy-town" class="inp-vacancy-town required" required>
+                <option>Выберите город...</option>
+                <option value="moscow">Москва</option>
+                <option value="saint-petersburg">Санкт-Петербург</option>
+            </select>
+
+            <label class="lbl lbl-sub" for="vacancy-metro">Введите ближайшие станции метро (необязательно):</label>
+            <input type="text" name="" id="vacancy-metro" class="inp-vacancy-metro" placeholder="Напр.: Арбатско-Покровская">
+            <p class="form-hint">Станции метро не выбраны. Для выбора станций начните вводить название в текстовое поле.</p>
+
+            <label class="lbl-mg lbl-long"><input type="checkbox" class="checkbox">Рассматриваются иногородние кандидаты</label>
+            <p class="form-hint">Внимание! В данном поле указываются только те города, в которых предоставляется работа. Если Вы готовы рассматривать кандиатов из других городов с переездом, то просто установите соответствующий флажок, а не указывайте их в этом поле. В случае нарушения аккаунт будет заблокирован.</p>
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">
+        <div class="col-form-1 col-form-nopad">
+            <p class="lbl">Вакансия на карте</p>
+            <p class="lbl-warn">Новая возможность!</p>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <label class="lbl-long"><input type="checkbox" class="checkbox">Отображать вакансию на карте</label>            
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">
+        <div class="col-form-1 col-form-nopad">
+            <label for="vacancy-specialization" class="lbl">Специализации</label>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <a href="#">Указать профобласть</a>
+            <p class="form-hint">Выберите от 1 до 5 разделов каталога, в которых будет отображаться вакансия.</p>
+            <input type="text" id="vacancy-specialization" class="inp-vacancy-specialization" placeholder="Поиск">
+
+            <ul class="list-vacancy-specializations" id="list-specializations">
+                <li class="list-item">
+                    <p class="field">Автомобильный бизнес</p>
+                    <ul class="list-sub">
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Автозапчасти</label>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продажа</label>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Производство</label>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Прокат, лизинг</label>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сервисное обслуживание </label>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Административный персонал</p>
+                    <ul class="list-sub">
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Архивариус</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">АХО</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Ввод данных</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Водитель</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Делопроизводство</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Курьер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Персональный ассистент</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Письменный перевод</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Последовательный перевод</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Ресепшн</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Секретарь</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Синхронный перевод</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сотрудник call-центра</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Уборка помещений</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управляющий офисом (Оffice manager)</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Учет товарооборота </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Банки / Инвестиции / Лизинг</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Forex</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Акции / Ценные бумаги</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Аналитик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Аудит / Внутренний контроль</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Бумаги с фиксированной доходностью (fixed Income)</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Бухгалтер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Бюджетирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Валютный контроль</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Внутренние операции (Back Office)</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Денежный рынок (money market)</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Инвестиционная компания</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Ипотека / ипотечное кредитование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Казначейство / Управление ликвидностью</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Кассовое обслуживание, инкассация</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Коммерческий банк</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Корпоративное финансирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Корреспондентские / международные отношения</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Кредитование малого и среднего бизнеса</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Кредиты</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Кредиты: розничные</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Лизинг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Методология /  Банковские технологии</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Налоги</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Обменные пункты / Банкоматы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ОПЕРУ</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Отчетность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Оценка залога / стоимости имущества</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Паевые фонды</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Пластиковые карты</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Портфельные инвестиции</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Привлечение клиентов</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продажа финансовых продуктов</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Проектное финансирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Прямые инвестиции</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Разработка новых продуктов / маркетинг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Расчеты</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Риски: кредитные</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Риски: лизинговые</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Риски: прочие</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Розничный бизнес</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Руководство бухгалтерией</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Торговое финансирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Трейдинг / Дилинг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Филиалы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Финансовый мониторинг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Экономист</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Эмиссии</label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Безопасность</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Имущественная безопасность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Личная безопасность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Охранник</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Руководитель СБ</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Экономическая и информационная безопасность </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Бухгалтерия / Учет / Финансы</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Аудит</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Бухгалтер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Бюджетирование и планирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Валютный контроль</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Казначейство</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Кассир / Инкассатор</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Кредитный контроль</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Налоги</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Оффшоры</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Планово-экономическое управление</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Расчет себестоимости</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Руководство бухгалтерией</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Учет заработной платы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Учет счетов и платежей</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Финансовый анализ</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Финансовый контроль</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Финансовый менеджмент</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Ценные бумаги</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Экономист</label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Высший менеджмент</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Администрирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Добыча cырья</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Инвестиции</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Информационные технологии / Интернет / Мультимедиа</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Искусство / Развлечения / Масс-медиа</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Коммерческий Банк</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Консультирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Маркетинг / Реклама / PR</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Медицина / Фармацевтика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Наука / Образование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продажи</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Производство / Технология</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Строительство / Недвижимость</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Транспорт / Логистика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Туризм / Гостиницы / Рестораны</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление малым бизнесом</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление персоналом / Тренинги</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Финансы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Юриспруденция </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Добыча Сырья</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Геологоразведка</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Инженер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Нефть</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Руда</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Уголь</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление предприятием </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Закупки</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Автомобили / Запчасти</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Алкоголь</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ГСМ, нефть, бензин</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Компьютерная техника</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Металлопрокат</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продукты питания</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продукция химического производства</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сертификация</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Строительные материалы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Товары для бизнеса</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Товары народного потребления</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление закупками</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Фармацевтика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Электроника, фото, видео</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Электротехническое оборудование </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Инсталляция и Сервис</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Инсталляция и настройка оборудования</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Менеджер по сервису - промышленное оборудование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Менеджер по сервису - телекомм. технологии</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Менеджер по сервису - транспорт</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Руководитель сервисного центра</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сервисный инженер</label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Информационные технологии / Интернет / Связь</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">CTO / CIO / Директор по IT</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Web инженер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Web мастер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Администратор баз данных</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Аналитик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Арт-директор</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Внедрение систем управления предприятием</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Инженер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Интернет</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Компьютерная безопасность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Консалтинг / Аутсорсинг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Маркетинг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Мультимедиа</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Оптимизация сайта (SEO)</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Поддержка / Helpdesk</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Программирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Разработка и сопровождение специализированного ПО</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сетевые технологии</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Системная интеграция</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Системный администратор</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Системы автоматизированного проектирования</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сотовые / Беспроводные технологии</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Телекоммуникации</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Тестирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Технический писатель</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление проектами</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Электронная коммерция </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Искусство / Развлечения / Масс-медиа</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Дизайн, графика, живопись</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Журналистика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Издательская деятельность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Казино и игорный бизнес</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Кино</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Литературная / Редакторская деятельность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Мода</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Музыка</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Пресса</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Прочее</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Радио</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Телевидение</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Фотография</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Электронные СМИ </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Консультирование</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Internet / E-Commerce</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Knowledge management</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">PR Consulting</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Информационные технологии</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Исследования рынка</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Корпоративные финансы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Недвижимость</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Организационное консультирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Ре-инжениринг / Аутсорсинг финансовой функции</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Ре-инжениринг бизнес процессов</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Стратегия</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление практикой</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление проектами</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управленческое консультирование </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Маркетинг / Реклама / PR</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Below The Line (BTL)</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">PR / Маркетинговые коммуникации</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Аналитик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Арт директор</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Ассистент</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Брэнд-менеджмент</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Верстальщик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Дизайнер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Интернет маркетинг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Исследования рынка</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Консультант</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Копирайтер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Менеджер по работе с клиентами</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Менеджмент продукта (Product manager)</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Мерчендайзинг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Наружная реклама</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Печатная реклама</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Планирование / Размещение рекламы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Политический PR</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продвижение / Специальные мероприятия</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Производство рекламы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Радио реклама</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Рекламный агент</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Телевизионная реклама</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Торговый маркетинг (Trade marketing)</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление маркетингом</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление проектами</label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Медицина / Фармацевтика / Красота</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Административный персонал</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Ветеринария</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Клинические испытания</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Лаборант</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Лечащий врач</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Маркетинг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Массаж</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Младший и средний медперсонал</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Оптика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Провизор</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продажи</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продвижение лекарственных препаратов</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продвижение медицинского оборудования</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Производство</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Психология</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Салоны красоты / парикмахерские услуги</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сертификация </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Наука / Образование</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Биотехнологии</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Гуманитарные науки</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Инженерные науки</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Информатика / Информационные системы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Математика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Науки о Земле</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Преподавание</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Физика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Химия</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Экономика / Менеджмент</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Языки </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Начало карьеры / Студенты</p>
+                    <ul class="list-sub">
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Автомобильный бизнес</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Административный персонал</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Добыча сырья</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Информационные технологии / Интернет / Мультимедиа</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Искусство / Развлечения / Масс-медиа</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Консультирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Маркетинг / Реклама / PR</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Медицина / Фармацевтика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Наука / Образование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продажи</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Производство / Технологии</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Страхование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Строительство / Архитектура</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Транспорт / Логистика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Туризм / Гостиницы / Рестораны</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление персоналом</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Финансы / Банки /  Инвестиции</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Юристы </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Некоммерческие организации</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Благотворительность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Государственная служба</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">НИИ</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Общественные организации</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Правительство </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Персонал для дома</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Водитель</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Воспитатель</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Горничная</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Гувернантка</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Дворник</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Домработница</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Логопед</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Медсестра</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Няня</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Педагог</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Повар</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Помощник по хозяйству</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Разнорабочий</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Репетитор</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Садовник</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Семейная пара с проживанием</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сиделка</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Уборщица</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управляющий </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Продажи</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Автомобили / Запчасти</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Алкоголь</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ГСМ, нефть, бензин</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Дилерские сети</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Дистрибуция</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Компьютерная техника</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Компьютерные программы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Мебель</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Медицина / Фармацевтика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Менеджер по работе с клиентами</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Металлопрокат</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Многоуровневый маркетинг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Оптовая торговля</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продукты питания</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продукция химического производства</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Прямые продажи</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Розничная торговля</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сельское хозяйство</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сертификация</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сетевые решения</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Системы безопасности</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Станки, тяжелое оборудование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Строительные материалы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Текстиль / Одежда</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Товары для бизнеса</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Товары народного потребления</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Торговля биржевыми товарами</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Торговый представитель</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление продажами</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Услуги для бизнеса</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Услуги для населения</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Франчайзинг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Цветные металлы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Электроника, фото, видео</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Электротехническое оборудование</label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Производство</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Авиационная промышленность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">втомобильная промышленность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">лавный агроном</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">лавный инженер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">лавный механик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">акупки и снабжение</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">оотехник</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">нженер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">нженер / Мясо- и птицепереработка</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">нженер / Производство и переработка зерновых</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">нженер / Производство сахара</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">онтроль качества</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">егкая промышленность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">есная промышленность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ашиностроение</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ебельное производство</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">еталлургия</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">аладчик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ачальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ефтепереработка</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">храна труда</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ищевая промышленность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">олиграфия</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">адиоэлектронная промышленность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">уководство предприятием</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ельхозпроизводство</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ертификация</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">тройматериалы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">удостроение</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">абачная промышленность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ехнолог</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ехнолог / Мясо- и птицепереработка</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ехнолог / Производство и переработка зерновых</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ехнолог / Производство сахара</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">правление проектами</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">правление цехом</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">армацевтическая промышленность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">имическая промышленность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">колог</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">лектроэнергетика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">нергетик производства </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Рабочие специальности</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Гардеробщик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Грузчик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Дворник</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Дорожные рабочие</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Жестянщик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Иное</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Комплектовщик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Лифтер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Маляр</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Машинист экскаватора</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Механик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Монтажник</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Разнорабочий</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сантехник</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сборщик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Сварщик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Слесарь</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Столяр</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Токарь</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Уборщик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Фасовщик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Фрезеровщик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Швея</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Шлифовщик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Штукатур</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Электрик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Электромонтер</label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Спортивные клубы / Фитнес</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Администрация</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Косметология</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продажи</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Тренерский состав </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Страхование</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Автострахование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Агент</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Актуарий</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Андеррайтер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Комплексное страхование физических лиц</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Комплексное страхование юридических лиц</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Медицинское страхование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Руководитель направления</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Страхование бизнеса</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Страхование жизни</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Страхование недвижимости</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Страхование ответственности</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Урегулирование убытков</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Эксперт-оценщик </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Строительство / Недвижимость</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Агент / Риэлтор</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Гостиницы / Магазины</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Девелопер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Дизайн / Оформление</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Жилье</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ЖКХ</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Инженер</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Инженер теплоэнергетик</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Нежилые помещения</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Отделочные работы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Проектирование / Архитектура</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Прораб</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Строительство</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление проектами</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Эксплуатация </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Транспорт / Логистика</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Авиаперевозки</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Автоперевозки</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Бизнес-авиация</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">ВЭД</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Гражданская авиация</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Железнодорожные перевозки</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Закупки / Снабжение</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Логистика</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Морские / Речные перевозки</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Складское хозяйство</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Таможенное оформление</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Трубопроводы </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Туризм / Гостиницы / Рестораны</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Авиабилеты</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Банкеты</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Бронирование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Гид / Экскурсовод</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Кейтеринг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Обслуживание посетителей ресторана</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Организация встреч / конференций</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Организация туристических продуктов</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Персонал кухни</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Продажа туристических услуг</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Размещение / Обслуживание гостей</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление гостиницами</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление ресторанами / барами</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Шеф-повар </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Управление персоналом / HR / Тренинги</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Компенсации и льготы</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Развитие персонала</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Рекрутмент</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Тренинги</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Управление персоналом</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Учет кадров </label></li>
+                    </ul>
+                </li>
+                <li class="list-item">
+                    <p class="field">Юристы</p>
+                    <ul class="list-sub">                        
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Compliance</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Авторское право</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Адвокат</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Арбитраж</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Банковское право</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Законотворчество</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Интеллектуальная собственность</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Корпоративное право</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Международное право</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Морское право</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Налоговое право</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Начальный уровень / Мало опыта</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Недвижимость</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Недропользование</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Нотариат</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Помощник</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Семейное право</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Слияния и поглощения</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Страховое право</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Трудовое право</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Уголовное право</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Ценные бумаги / рынки капитала</label></li>
+                        <li class="list-sub-item"><label><input type="checkbox" class="checkbox">Юрисконсульт </label></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">  
+        <div class="col-form-1">
+            <p for="" class="lbl">Заработная плата:</p>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <div class="inp-salary-wrap">
+                <label for="vacancy-salary-min">от</label>
+                <input type="text" name="salary-min" value="5000" class="number" id="vacancy-salary-min">
+            </div>
+            <div class="inp-salary-wrap">
+                <label for="vacancy-salary-max">до</label>
+                <input type="text" name="salary-max" value="10000" class="number" id="vacancy-salary-max">
+                руб.
+            </div>
+            <label class="lbl-long lbl-inline"><input type="checkbox" class="checkbox">По договорённости</label>
+            <p class="form-hint">Заработная плата указывается в МЕСЯЦ в руб.</p>
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">
+        <div class="col-form-1">
+            <label for="vacancy-description" class="lbl">Описание:</label>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <textarea id="vacancy-description">
+Обязанности:
+
+
+Требования:
+
+
+Условия работы и компенсации:
+
+
+            </textarea>
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">
+        <div class="col-form-1"><label for="vacancy-education" class="lbl">Образование</label></div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <select id="vacancy-education">
+                <option>Не имеет значения</option>
+            </select>
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">
+        <div class="col-form-1">
+            <label for="vacancy-experience" class="lbl">Мин. опыт работы:</label>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <select id="vacancy-experience">
+                <option>Без опыта работы</option>
+            </select>
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">
+        <div class="col-form-1">
+            <label for="vacancy-schedule" class="lbl">График работы:</label>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <select id="vacancy-schedule">
+                <option>Полный рабочий день</option>
+            </select>
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">
+        <div class="col-form-1">
+            <label id="vacancy-language" class="lbl">Знание языка</label>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <select aria-labelledby="vacancy-language" class="input-language-1">
+                <option>Не требуется</option>
+                <option>Английский</option>
+            </select>
+            <select aria-labelledby="vacancy-language" class="input-language-2" disabled>
+                <option>базовый</option>
+                <option>чтение проф. литературы</option>
+                <option>разговорный</option>
+                <option>свободный</option>
+            </select>
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">
+        <div class="col-form-1">
+            <label for="vacancy-driving-licence" class="lbl">Водительские права:</label>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <select id="vacancy-driving-licence">
+                <option>Не обязательны</option>
+            </select>
+
+            <div class="lbl-long lbl-mg">
+                <input type="checkbox" class="checkbox" id="vacancy-driving" disabled><label for="vacancy-driving">Обязательно наличие личного автомобиля</label>
+            </div><!-- /.lbl-long -->
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <h2 class="h-form">Контактная информация</h2>
+
+    <div class="row-form">
+        <div class="col-form-1 col-form-nopad">
+            <label class="lbl" for="vacancy-anonym">Анонимная вакансия:</label>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">            
+            <label class="lbl-long"><input type="checkbox" class="checkbox" id="vacancy-anonym">Опубликовать вакансию анонимно, без указания информации о компании.</label>
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">
+        <div class="col-form-1">
+            <label for="vacancy-name" class="lbl">Контактное лицо:</label>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2">
+            <input type="text" id="vacancy-name" placeholder="Иванов Иван Иванович">
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <div class="row-form">
+        <div class="col-form-1">
+            <label class="lbl" id="employer-tel">Телефоны</label>
+        </div><!-- /.col-form-1 -->
+        <div class="col-form-2 col-form-tel">
+            <div class="col-form-tel_wrap">
+                <input type="tel" class="inp-tel" id="input-tel" placeholder="+7 (XXX) XX-XX-XXX" aria-labelledby="employer-tel">
+                <button class="btn-del-tel" type="button" title="Удалить телефон">Удалить номер телефона</button>
+                <button class="btn-add-tel" type="button" title="Добавить телефон">Добавить номер телефона</button>
+            </div><!-- /.col-form-tel_wrap -->
+        </div><!-- /.col-form-2 -->
+    </div><!-- /.row-form -->
+
+    <h2 class="h-form">Выберите пакет услуг</h2>
+
+    <div class="form-package">
+        <div class="input"><input type="radio" class="radio" name="package" id="package-hot" value="package-hot" checked></div>
+        <div class="icon"><img src="images/icon-1.png" alt="pic"></div>
+        <div class="text">
+            <label class="lbl" for="package-hot">Услуга "Горячая вакансия"</label>
+            <p class="descr">Вакансия Публикация закрепляется вверху списка на 3 дня - <b>299Р</b></p>
+        </div><!-- /.text -->
+    </div><!-- /.form-package -->
+    <div class="form-package">
+        <div class="input"><input type="radio" class="radio" name="package" id="package-turbo" value="package-turbo"></div>
+        <div class="icon"><img src="images/icon-2.png" alt="pic"></div>
+        <div class="text">
+            <label class="lbl" for="package-turbo">Услуга "Турбо вакансия"</label>
+            <p class="descr">Вакансия Публикация закрепляется вверху списка на 7 дней - <b>299Р</b></p>
+            <p class="descr">Выделение 7 дней в верху списка</p>
+        </div><!-- /.text -->
+    </div><!-- /.form-package -->    
+    
+
+    <div class="row-form">
+        <button type="submit" class="btn btn-main">Опубликовать вакансию</button>            
+        <a href="#" class="btn">Предварительный просмотр</a>        
+    </div><!-- /.row-form -->
+</form>
+            </div><!-- /.col -->
+            <aside class="col-md-2 sidebar-left">
+                <h3>Левый сайдбар</h3>
+            </aside><!-- /.col -->
+            <aside class="col-md-2 sidebar-right">
+                <h3>Правый сайдбар</h3>
+            </aside><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</main><!-- /.main-content -->
+
+<footer class="footer-site">
+    <nav class="nav-footer">
+        <ul class="nav-menu container" role="menu">
+            <li class="menu-item" role="menuitem"><i class="support"></i><a href="#">Служба поддержки</a></li>
+            <li class="menu-item" role="menuitem"><i class="partner"></i><a href="#">Информационное партнерство</a></li>
+            <li class="menu-item" role="menuitem"><i class="calendar"></i><a href="#">Производственный календарь </a></li>
+            <li class="menu-item" role="menuitem"><i class="mobile"></i><a href="#">Мобильная версия</a></li>
+        </ul>
+    </nav>
+
+    <div class="container footer-site__i">
+        <p>
+            &#169; RabotaVGorode.Ru 2007-2018 <br>
+            <small>RabotaVGorode.Ru является зарегистрированным товарным знаком и охраняется законодательством Российской Федерации.</small>
+        </p>
+        <nav class="nav-footer-second">
+            <ul class="nav-menu nav-menu-inline" role="menu">
+                <li class="menu-item" role="menuitem"><a href="#">О нас</a></li>
+                <li class="menu-item" role="menuitem"><a href="#">Пользовательское соглашение</a></li>
+                <li class="menu-item" role="menuitem"><a href="#">Как распознать работодателей-мошенников?</a></li>
+            </ul>
+        </nav>
+    </div><!-- /.container -->
+</footer>
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>
