@@ -74,6 +74,7 @@ a {
 	.b-region__i, .b-login__reg__i {
 		@include shadow();
 		background: #fff;
+		width: 200px;
 		width: max-content;
 		position: relative;
 		@media (min-width: $screen-sm-min) {
@@ -419,8 +420,9 @@ a {
 .inp-company-type {
 	width: 65px;
 	position: absolute;
-	left: 8px; top: 0;
-	height: 36px;
+	left: 8px; top: 1px;
+	height: 33px;
+	padding: 0 0 0 4px;
 }
 
 

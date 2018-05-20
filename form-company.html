@@ -104,7 +104,7 @@
                             <label for="employer-inn" class="lbl">ИНН:</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <input type="url" id="employer-inn" value="6658399762">
+                            <input type="text" id="employer-inn" value="6658399762" class="inp-required">
                             <p class="form-hint">На сайте не публикуется. Введите ННН Вашей организации. Если ННН Вам не известен - обратитесь к Вашему руководителю. Указание ННН необходимо для внутреннего учёта порталом RabotaVGorode.Ru</p>
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
@@ -114,7 +114,8 @@
                             <label for="employer-town" class="lbl">Местонахождение:</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <select id="employer-town">
+                            <select id="employer-town" class="inp-required">
+                                <option>Выберите город...</option>
                                 <option>Москва</option>
                                 <option>Санкт-Петербург</option>
                             </select>
@@ -126,7 +127,7 @@
                             <label for="company-address" class="lbl">Адрес:</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <input type="text" placeholder="Петровка, 38" id="company-address">
+                            <input type="text" placeholder="Петровка, 38" id="company-address" class="inp-required">
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
 
@@ -150,7 +151,7 @@
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2 col-form-tel">
                             <div class="col-form-tel_wrap">
-                                <input type="tel" class="inp-tel" id="input-tel" placeholder="+7 (XXX) XX-XX-XXX" aria-labelledby="employer-tel">
+                                <input type="tel" class="inp-tel inp-required" id="input-tel" placeholder="+7 (XXX) XX-XX-XXX" aria-labelledby="employer-tel">
                                 <button class="btn-del" type="button" title="Удалить телефон">Удалить номер телефона</button>
                             </div><!-- /.col-form-tel_wrap -->
                             <div class="col-form-tel_wrap">

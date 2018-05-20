@@ -79,7 +79,7 @@
                             <label class="lbl" for="vacancy-title">Название вакансии:</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <input type="text" id="vacancy-title" placeholder="Напр.: Главный Бухгалтер" class="required" required>
+                            <input type="text" id="vacancy-title" placeholder="Напр.: Главный Бухгалтер" class="inp-required">
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
 
@@ -91,7 +91,7 @@
                             <label class="lbl-inline"><input class="radio" type="radio" name="vacancy-towns" checked>В одном городе</label>
                             <label class="lbl-inline"><input class="radio" type="radio" name="vacancy-towns">В нескольких городах</label>
 
-                            <select aria-labelledby="lbl-vacancy-town" class="inp-vacancy-town required" required>
+                            <select aria-labelledby="lbl-vacancy-town" class="inp-vacancy-town inp-required" >
                                 <option>Выберите город...</option>
                                 <option value="moscow">Москва</option>
                                 <option value="saint-petersburg">Санкт-Петербург</option>
@@ -820,7 +820,8 @@
                             <label for="vacancy-experience" class="lbl">Мин. опыт работы:</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <select id="vacancy-experience">
+                            <select id="vacancy-experience" class="inp-required">
+                                <option>Выберите вариант...</option>
                                 <option>Без опыта работы</option>
                             </select>
                         </div><!-- /.col-form-2 -->
@@ -831,7 +832,8 @@
                             <label for="vacancy-schedule" class="lbl">График работы:</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <select id="vacancy-schedule">
+                            <select id="vacancy-schedule" class="inp-required">
+                                <option>Выберите вариант...</option>
                                 <option>Полный рабочий день</option>
                             </select>
                         </div><!-- /.col-form-2 -->
@@ -886,7 +888,7 @@
                             <label for="vacancy-name" class="lbl">Контактное лицо:</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <input type="text" id="vacancy-name" placeholder="Иванов Иван Иванович">
+                            <input type="text" id="vacancy-name" placeholder="Иванов Иван Иванович" class="inp-required">
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
 
@@ -896,7 +898,7 @@
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2 col-form-tel">
                             <div class="col-form-tel_wrap">
-                                <input type="tel" class="inp-tel" id="input-tel" placeholder="+7 (XXX) XX-XX-XXX" aria-labelledby="employer-tel">
+                                <input type="tel" class="inp-tel inp-required" id="input-tel" placeholder="+7 (XXX) XX-XX-XXX" aria-labelledby="employer-tel">
                                 <button class="btn-del" type="button" title="Удалить телефон">Удалить номер телефона</button>
                             </div><!-- /.col-form-tel_wrap -->
                             <div class="col-form-tel_wrap">
