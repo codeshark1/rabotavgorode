@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Вакансия</title>
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="js/selectivizr-min.js"></script>
+    <![endif]-->
+</head>
+<body class="home">
+<!--[if lt IE 10]>
+    <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
+<![endif]-->
+<header class="header-site">    
+    <button id="nav-toggle" class="but-nav"></button>
+
+    <div class="header-site__wrap">
+        <div class="container">
+            <div class="header-site__top">
+                <div class="b-logo">
+                    <a href="#"><img src="images/logotype.png" alt="RabotaVGorode.ru"></a>
+                </div><!-- /.b-logo -->
+                <div class="b-actions">
+                    <p><a href="#" class="btn btn-2">+ Разместить резюме</a></p>
+                    <p><a href="#" class="btn btn-2">+ Добавить вакансию</a></p>
+                </div><!-- /.b-actions -->
+                <div class="b-region">
+                    <p><a href="#" class="chosen">Санкт-Петербург</a></p>
+                    <div class="b-region__i">
+                        <p class="title">Ваш регион — Санкт-Петербург?</p>
+                        <a href="#" class="btn">Все верно</a>
+                        <a href="#" class="btn">Выбрать другой</a>
+                        <button type="button" class="close"></button>
+                    </div><!-- /.b-region__i -->
+                </div><!-- /.b-region -->
+                <div class="b-login">
+                    <i class="fas fa-lock"></i> <a href="#" class="l-login">Войдите</a> <span class="or">или</span> 
+                    <div class="b-login__reg">
+                        <a href="#" class="l-reg">Зарегистрируйтесь</a>
+                        <ul class="b-login__reg__i">
+                            <li><a href="#">Я работодатель</a></li>
+                            <li><a href="#">Я соискатель</a></li>
+                            <li><a href="#">Предлагаю курсы онлайн</a></li>
+                        </ul>
+                    </div><!-- /.b-login__reg -->
+                </div><!-- /.b-login -->
+            </div><!-- /.header-site__top -->        
+
+            <nav class="navigation-main">
+                <ul role="menu" class="nav-menu-main" id="nav-main">
+                    <li role="menuitem" class="menu-item"><a href="#">Все вакансии</a></li>
+                    <li role="menuitem" class="menu-item"><a href="#">Все резюме</a></li>
+                    <li role="menuitem" class="menu-item"><a href="#">Онлайн обучение</a></li>
+                    <li role="menuitem" class="menu-item"><a href="#">Наши сервисы</a></li>
+                    <li role="menuitem" class="menu-item"><a href="#">Услуги</a></li>
+                </ul>
+            </nav>
+        </div><!-- /.container -->
+    </div><!-- /.header-site__wrap -->
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <div class="row-mod">
+            <div class="content-main">
+                <article class="vacancy-details">
+                    <h1 class="h-sec">Водитель-курьер на личном автомобиле</h1>
+                    <div class="vacancy-details-top">
+                        <small class="vacancy-id">ID вакансии: 795637</small>
+                        <ul>
+                            <li class="row-form">
+                                <div class="col-form-1">
+                                    <p class="lbl lbl-bigger">Заработная плата:</p>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">
+                                    <p class="vacancy-salary">от 59 000 до 66 000 руб.</p>
+                                </div><!-- /.col-form-2 -->
+                            </li><!-- /.row-form -->
+                            <li class="row-form">
+                                <div class="col-form-1">
+                                    <p class="lbl">Актуальна в городах:</p>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">
+                                    <p>Москва - 
+                                        <a class="metro-link" href="#"><i class="spr_suwbay subwaym8"></i>Шоссе интузиастов</a>
+                                    </p>
+                                </div><!-- /.col-form-2 -->
+                            </li><!-- /.row-form -->
+                            <li class="row-form">
+                                <div class="col-form-1">
+                                    <p class="lbl">График работы:</p>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">
+                                    <p>Сменный график</p>
+                                </div><!-- /.col-form-2 -->
+                            </li><!-- /.row-form -->
+                            <li class="row-form">
+                                <div class="col-form-1">
+                                    <p class="lbl">Дата обновления:</p>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">
+                                    <p>16 мая 2018</p>
+                                </div><!-- /.col-form-2 -->
+                            </li><!-- /.row-form -->
+                        </ul>
+                        <section class="b-vacancy-share">
+                            <h4 class="h-sharing">Поделиться</h4>
+                            <ul class="nav-social">
+                                <li class="list-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="list-item"><a href="#"><i class="fab fa-vk"></i></a></li>
+                                <li class="list-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li class="list-item"><a href="#"><i class="fab fa-odnoklassniki"></i></a></li>
+                                <li class="list-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li class="list-item"><a href="#"><i class="fas fa-at"></i></a></li>
+                            </ul>
+                        </section><!-- /.b-vacancy-share -->
+                    </div><!-- /.vacancy-details-top -->
+
+
+                    <hr>
+
+                    <h2 class="h-form">Требования и обязанности</h2>
+
+                    <ul>
+                        <li class="row-form">
+                            <div class="col-form-1">
+                                <p class="lbl">Знание ин. языка:</p>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <p>не требуется</p>
+                            </div><!-- /.col-form-2 -->
+                        </li><!-- /.row-form -->
+                        <li class="row-form">
+                            <div class="col-form-1">
+                                <p class="lbl">Образование:</p>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <p>не имеет значения</p>
+                            </div><!-- /.col-form-2 -->
+                        </li><!-- /.row-form -->
+                        <li class="row-form">
+                            <div class="col-form-1">
+                                <p class="lbl">Опыт работы в данной области:</p>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <p>3-5 лет</p>
+                            </div><!-- /.col-form-2 -->
+                        </li><!-- /.row-form -->
+                        <li class="row-form">
+                            <div class="col-form-1">
+                                <p class="lbl">Условия работы и компенсации:</p>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <p>
+                                    Работа в интернет-магазине производственной компании <br>
+                                    График работы 5/2 с 5.30 до 12.00 ч <br>
+                                    Загрузка и отчетность ш.Энтузиастов <br>
+                                    Стоимость одного адреса 200 руб <br>
+                                    Оплата топлива <br>
+                                    Оплата 1км от МКАД 15руб.
+                                </p>
+                            </div><!-- /.col-form-2 -->
+                        </li><!-- /.row-form -->
+                        <li class="row-form">
+                            <div class="col-form-1">
+                                <p class="lbl">Требования:</p>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <p>
+                                    Наличие личного легкового автомобиля малого/среднего класса<br>
+                                    Физически крепкий. здоровый образ жизни<br>
+                                    Опыт работы в курьерских компаниях приветствуется
+                                </p>
+                            </div><!-- /.col-form-2 -->
+                        </li><!-- /.row-form -->
+                        <li class="row-form">
+                            <div class="col-form-1">
+                                <p class="lbl">Обязанности:</p>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <p>Доставка продукции предприятия (здоровое питание) гражданам и в организации Москвы и Московской области</p>
+                            </div><!-- /.col-form-2 -->
+                        </li><!-- /.row-form -->
+                        <li class="row-form">
+                            <div class="col-form-1">
+                                <p class="lbl">Комментарий</p>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <p>
+                                    Контактов лицо Олеся<br>
+                                    Телефон в (903) 7172508
+                                </p>
+                            </div><!-- /.col-form-2 -->
+                        </li><!-- /.row-form -->
+                        <li class="row-form">
+                            <div class="col-form-1">
+                                <p class="lbl">Водительские права:</p>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <p>В, ооязательно наличие личного автомобиля</p>
+                            </div><!-- /.col-form-2 -->
+                        </li><!-- /.row-form -->
+                        <li class="row-form">
+                            <div class="col-form-1">
+                                <p class="lbl">О компании:</p>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <p>
+                                    Строительство и открытие гостиниц. мини-отелей. костелов в Москве и Московской области <br>
+                                    Операции с недвижимым имуществом / Сдача внаем собственного недвижимого имущества
+                                </p>
+                            </div><!-- /.col-form-2 -->
+                        </li><!-- /.row-form -->
+                    </ul>
+
+                    <section class="b-vacancy-sidebar" id="vacancy-sidebar">
+                        <div class="b-vacancy-sidebar--i-1">
+                            <h3 class="h-form">Информация о работодателе</h3>
+                            <div class="user-avatar"><img src="images/logo-employer.jpg" alt="logo"></div>
+                            <p class="user-data"><i class="fas fa-building"></i><a href="#">Синтро, ООО</a></p>
+                            <p class="user-data"><i class="fas fa-user"></i>Олеся</p>
+                            <p class="user-data"><i class="fas fa-phone"></i>(903) 717-25-08</p>
+                            <p class="user-data"><i class="fas fa-map-marker-alt"></i><a href="#" class="link-local">Показать на карте</a></p>
+                            <p class="user-data-comment">Для получения подробной информации о работодателе кликните на название компании.</p>
+
+                            <div class="b-center">
+                                <a href="#" class="btn btn-main">Отправить резюме</a>
+                            </div>
+                        </div><!-- /.b-vacancy-sidebar--i-1 -->
+
+                        <ul class="list-vacancy-actions">
+                            <li class="list-item"><i class="fas fa-download"></i><a href="#">Скачать (PDF)</a></li>
+                            <li class="list-item"><i class="fas fa-print"></i><a href="#">Распечатать</a></li>
+                            <li class="list-item"><i class="fas fa-star"></i><a href="#" class="link-local">В избранные</a></li>
+                            <li class="list-item"><i class="far fa-thumbs-down"></i><a href="#" class="link-local">В чёрный список</a></li>
+                            <li class="list-item"><i class="far fa-envelope"></i><a href="#" class="link-local">Отправить на E-mail</a></li>
+                            <li class="list-item"><i class="fas fa-ban"></i><a href="#" class="link-local">Пожаловаться!</a></li>
+                        </ul><!-- /.list-actions -->
+
+                        <div class="b-vacancy-sidebar--i-2 b-center">
+                            <a href="#" class="btn btn-2">Заказать услугу</a>
+                        </div><!-- /.b-vacancy-sidebar--i -->
+                    </section><!-- /.b-vacancy-sidebar -->
+
+                    <section class="b-vacancy-packages">
+                        <div class="form-package">
+                            <div class="input"><input type="checkbox" class="checkbox" name="package" id="package-hot" value="package-hot"></div>
+                            <div class="icon"><img src="images/icon-hot.png" alt="pic"></div>
+                            <div class="text">
+                                <label class="lbl" for="package-hot">Услуга "Горячая вакансия"</label>
+                                <p class="descr">Вакансия Публикация закрепляется вверху списка на 3 дня - <b>299Р</b></p>
+                            </div><!-- /.text -->
+                        </div><!-- /.form-package -->
+
+                        <div class="form-package">
+                            <div class="input"><input type="checkbox" class="checkbox" name="package" id="package-turbo" value="package-turbo"></div>
+                            <div class="icon"><img src="images/icon-turbo.png" alt="pic"></div>
+                            <div class="text">
+                                <label class="lbl" for="package-turbo">Услуга "Турбо вакансия"</label>
+                                <p class="descr">Вакансия Публикация закрепляется вверху списка на 7 дней - <b>599Р</b></p>
+                                <p class="descr">Выделение 7 дней в верху списка</p>
+                            </div><!-- /.text -->
+                        </div><!-- /.form-package -->   
+
+                        <div class="b-vacancy-packages--action">
+                            <a href="#" class="btn btn-2">Заказать</a>
+                        </div><!-- /.action -->
+                    </section><!-- /.b-vacancy-packages -->
+
+                    <section class="b-related">
+                        <h3 class="h-form">Похожие вакансии</h3>
+
+                        <ul class="list-columns-2">
+                            <li><a href="#">Тайный покупатель Омск</a><p class="job-salary">по договоренности</p></li>
+                            <li><a href="#">Водитель такси</a><p class="job-salary">от 50 000 до 120 000 руб.</p></li>
+                            <li><a href="#">Автор студенческих работ</a><p class="job-salary">от 5 000 до 20 000 руб.</p></li>
+                            <li><a href="#">Специалист по взысканию</a><p class="job-salary">от 50 000 руб.</p></li>
+                        </ul>
+                        <hr>
+                        
+                        <h4 class="h-block-sub">Посмотрите другие вакансии в разделах:</h4>
+                        <ul class="list-related-minor">
+                            <li class="list-item"><a href="#">Работа водителем курьером в Москве</a></li>
+                            <li class="list-item"><a href="#">Работа водителем с личным автомобилем в Москве</a></li>
+                            <li class="list-item"><a href="#">Работа водителем автомобиля в Москве</a></li>
+                            <li class="list-item"><a href="#">Работа водителем с автомобилем в Москве</a></li>
+                        </ul>
+                    </section><!-- /.b-related -->
+                </article>
+            </div><!-- /.content-main -->
+            <aside class="sidebar-left" id="sidebar-left">
+                <h3>Левый сайдбар</h3>
+            </aside><!-- /.sidebar-left -->
+            <aside class="sidebar-right" id="sidebar-right">
+                <h3>Правый сайдбар</h3>
+            </aside><!-- /.sidebar-right -->
+        </div><!-- /.row-mod -->
+    </div><!-- /.container -->
+</main><!-- /.main-content -->
+
+<footer class="footer-site">
+    <nav class="nav-footer">
+        <ul class="nav-menu container" role="menu">
+            <li class="menu-item" role="menuitem"><i class="support"></i><a href="#">Служба поддержки</a></li>
+            <li class="menu-item" role="menuitem"><i class="partner"></i><a href="#">Информационное партнерство</a></li>
+            <li class="menu-item" role="menuitem"><i class="calendar"></i><a href="#">Производственный календарь </a></li>
+            <li class="menu-item" role="menuitem"><i class="mobile"></i><a href="#">Мобильная версия</a></li>
+        </ul>
+    </nav>
+
+    <div class="container footer-site__i">
+        <p>
+            &#169; RabotaVGorode.Ru 2007-2018 <br>
+            <small>RabotaVGorode.Ru является зарегистрированным товарным знаком и охраняется законодательством Российской Федерации.</small>
+        </p>
+        <nav class="nav-footer-second">
+            <ul class="nav-menu nav-menu-inline" role="menu">
+                <li class="menu-item" role="menuitem"><a href="#">О нас</a></li>
+                <li class="menu-item" role="menuitem"><a href="#">Пользовательское соглашение</a></li>
+                <li class="menu-item" role="menuitem"><a href="#">Как распознать работодателей-мошенников?</a></li>
+            </ul>
+        </nav>
+    </div><!-- /.container -->
+</footer>
+</body>
+</html>

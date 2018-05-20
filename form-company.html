@@ -68,18 +68,18 @@
 
 <main class="main-content">
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 content-main">
+        <div class="row-mod">
+            <div class="content-main">
                 <h1 class="h-sec">Профиль компании</h1>
                 <p class="form-descript">Для получения полного спектра услуг заполните данные о Вашей компании. Это поможет ускорить процесс проверки Вашей регистрации сотрудниками.</p>
-
+                <p class="inp-required inp-required-demo">Поля отмеченные так являются обязательными для заполнения.</p>                
                 <form action="#" class="form-main">
                     <div class="row-form">
                         <div class="col-form-1">
                             <label class="lbl" id="lbl-employer-company">Название компании:</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2 col-form-company-name">
-                            <select name="" class="inp-company-type" aria-labelledby="lbl-employer-company">
+                            <select class="inp-company-type" aria-labelledby="lbl-employer-company">
                                 <option>ООО</option>
                             </select>
                             <input type="text" placeholder="Название" class="inp-company-name" aria-labelledby="lbl-employer-company">
@@ -93,7 +93,7 @@
                             <label class="lbl" for="company-type">Тип компании:</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <select name="" id="company-type">
+                            <select id="company-type">
                                 <option>Прямой работодатель</option>
                             </select>
                         </div><!-- /.col-form-2 -->
@@ -151,8 +151,11 @@
                         <div class="col-form-2 col-form-tel">
                             <div class="col-form-tel_wrap">
                                 <input type="tel" class="inp-tel" id="input-tel" placeholder="+7 (XXX) XX-XX-XXX" aria-labelledby="employer-tel">
-                                <button class="btn-del-tel" type="button" title="Удалить телефон">Удалить номер телефона</button>
-                                <button class="btn-add-tel" type="button" title="Добавить телефон">Добавить номер телефона</button>
+                                <button class="btn-del" type="button" title="Удалить телефон">Удалить номер телефона</button>
+                            </div><!-- /.col-form-tel_wrap -->
+                            <div class="col-form-tel_wrap">
+                                <input type="tel" class="inp-tel" id="input-tel" placeholder="+7 (XXX) XX-XX-XXX" aria-labelledby="employer-tel">
+                                <button class="btn-add" type="button" title="Добавить телефон">Добавить номер телефона</button>
                             </div><!-- /.col-form-tel_wrap -->
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
@@ -199,7 +202,7 @@
 
                     <div class="row-form">
                         <div class="col-form-1 col-form-nopad">
-                            <label class="lbl" for="">Документы</label>
+                            <label class="lbl" for="company-docs">Документы</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
                             <input type="file" name="company-docs" id="company-docs" class="inputfile">
@@ -208,20 +211,17 @@
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
 
-                    <div class="row-form">
-                        <div class="col-form-1"></div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <button type="submit" class="btn btn-main">Сохранить</button>
-                        </div><!-- /.col-form-2 -->
+                    <div class="row-form row-form-half">
+                        <button type="submit" class="btn btn-main">Сохранить</button>                        
                     </div><!-- /.row-form -->
                 </form>
-            </div><!-- /.col -->
-            <aside class="col-md-2 sidebar-left">
+            </div><!-- /.content-main -->
+            <aside class="sidebar-left" id="sidebar-left">
                 <h3>Левый сайдбар</h3>
-            </aside><!-- /.col -->
-            <aside class="col-md-2 sidebar-right">
+            </aside><!-- /.sidebar-left -->
+            <aside class="sidebar-right" id="sidebar-right">
                 <h3>Правый сайдбар</h3>
-            </aside><!-- /.col -->
+            </aside><!-- /.sidebar-right -->
         </div><!-- /.row -->
     </div><!-- /.container -->
 </main><!-- /.main-content -->

@@ -38,4 +38,9 @@ jQuery(document).ready(function($){
         });
     }
     list_specializations();
+
+    function clone_vacancy_sidebar() {
+        $('#vacancy-sidebar').clone().prependTo('#sidebar-right').addClass('clone');
+    }
+    clone_vacancy_sidebar();
 });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Добавление вакансии</title>
+    <title>Создать резюме</title>
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>    
@@ -18,7 +18,7 @@
 <!--[if lt IE 10]>
     <p class="browserupgrade">Вы используете <b>устаревший</b> браузер. Пожалуйста, <a href="http://browsehappy.com/?locale=ru_ru">обновите свой браузер</a> чтобы улучшить опыт работы с сайтом.</p>
 <![endif]-->
-<header class="header-site">    
+<header class="header-site">
     <button id="nav-toggle" class="but-nav"></button>
 
     <div class="header-site__wrap">
@@ -70,59 +70,125 @@
     <div class="container">
         <div class="row-mod">
             <div class="content-main">
-                <h1 class="h-sec">Добавление вакансии</h1>                
+                <h1 class="h-sec">Создать резюме</h1>
                 
                 <p class="inp-required inp-required-demo">Поля отмеченные так являются обязательными для заполнения.</p>                
-                <form action="#" class="form-main form-vacancy">
+                <form action="#">
+                    <h2 class="h-form">Основная информация</h2>
                     <div class="row-form">
                         <div class="col-form-1">
-                            <label class="lbl" for="vacancy-title">Название вакансии:</label>
+                            <label for="inp-lastname" class="lbl lbl-inline">Фамилия</label>/
+                            <label for="inp-firstname" class="lbl lbl-inline">Имя</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <input type="text" id="vacancy-title" placeholder="Напр.: Главный Бухгалтер" class="required" required>
+                            <input type="text" placeholder="Иванов" id="inp-lastname" class="inp-name">
+                            <input type="text" placeholder="Иван" id="inp-firstname" class="inp-name inp-required">
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
 
                     <div class="row-form">
-                        <div class="col-form-1 col-form-nopad">
-                            <label class="lbl" id="lbl-vacancy-town">Работа в городе:</label>
+                        <div class="col-form-1">
+                            <label for="inp-sex" class="lbl lbl-inline">Пол</label>/
+                            <label for="inp-age" class="lbl lbl-inline">Возраст</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <label class="lbl-inline"><input class="radio" type="radio" name="vacancy-towns" checked>В одном городе</label>
-                            <label class="lbl-inline"><input class="radio" type="radio" name="vacancy-towns">В нескольких городах</label>
+                            <select id="inp-sex" class="inp-sex">
+                                <option>Выберите пол...</option>
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                            </select>
+                            <input type="text" name="user-age" id="inp-age" class="inp-age" placeholder="Возраст">
+                            <p class="form-hint">Обратите внимание, данные поля не являются обязательными</p>
+                        </div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->
 
-                            <select aria-labelledby="lbl-vacancy-town" class="inp-vacancy-town required" required>
+                    <div class="row-form">
+                        <div class="col-form-1">            
+                            <label class="lbl" for="lbl-vacancy-town">Город:</label>
+                        </div><!-- /.col-form-1 -->
+                        <div class="col-form-2">
+                            <select id="lbl-vacancy-town" class="inp-vacancy-town inp-required">
                                 <option>Выберите город...</option>
                                 <option value="moscow">Москва</option>
                                 <option value="saint-petersburg">Санкт-Петербург</option>
                             </select>
 
-                            <label class="lbl lbl-sub" for="vacancy-metro">Введите ближайшие станции метро (необязательно):</label>
-                            <input type="text" id="vacancy-metro" class="inp-vacancy-metro" placeholder="Напр.: Арбатско-Покровская">
+                            <label class="lbl lbl-sub" for="vacancy-metro">Введите ближайшие станции метро (не более 3х):</label>
+                            <input type="text" name="" id="vacancy-metro" class="inp-vacancy-metro" placeholder="Напр.: Арбатско-Покровская">
                             <p class="form-hint">Станции метро не выбраны. Для выбора станций начните вводить название в текстовое поле.</p>
-
-                            <label class="lbl-mg lbl-long"><input type="checkbox" class="checkbox">Рассматриваются иногородние кандидаты</label>
-                            <p class="form-hint">Внимание! В данном поле указываются только те города, в которых предоставляется работа. Если Вы готовы рассматривать кандиатов из других городов с переездом, то просто установите соответствующий флажок, а не указывайте их в этом поле. В случае нарушения аккаунт будет заблокирован.</p>
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
 
                     <div class="row-form">
-                        <div class="col-form-1 col-form-nopad">
-                            <p class="lbl">Вакансия на карте</p>
-                            <p class="lbl-warn">Новая возможность!</p>
+                        <div class="col-form-1">
+                            <label class="lbl" id="employer-tel">Телефоны:</label>
+                        </div><!-- /.col-form-1 -->
+                        <div class="col-form-2 col-form-tel">
+                            <div class="col-form-tel_wrap">
+                                <input type="tel" class="inp-tel" id="input-tel" placeholder="+7 (XXX) XX-XX-XXX" aria-labelledby="employer-tel">
+                                <button class="btn-del" type="button" title="Удалить телефон">Удалить номер телефона</button>
+                            </div><!-- /.col-form-tel_wrap -->
+                            <div class="col-form-tel_wrap">
+                                <input type="tel" class="inp-tel" id="input-tel" placeholder="+7 (XXX) XX-XX-XXX" aria-labelledby="employer-tel">
+                                <button class="btn-add" type="button" title="Добавить телефон">Добавить номер телефона</button>
+                            </div><!-- /.col-form-tel_wrap -->
+                            <p class="form-hint">Введите один или несколько телефонов. В первом поле укажите номер, во втором, если необходимо, добавочный</p>
+                        </div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->
+
+                    <div class="row-form">
+                        <div class="col-form-1"><label for="employee-email" class="lbl">E-mail:</label></div><!-- /.col-form-1 -->
+                        <div class="col-form-2"><input type="email" placeholder="name@gmail.com" id="employee-email"></div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->
+
+                    <div class="row-form">
+                        <div class="col-form-1"><label for="employee-skype" class="lbl">Skype:</label></div><!-- /.col-form-1 -->
+                        <div class="col-form-2"><input type="text" placeholder="" id="employee-skype"></div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->
+
+                    <h2 class="h-form">Желаемая работа</h2>
+
+                    <div class="row-form">
+                        <div class="col-form-1">
+                            <label class="lbl" for="employee-experience">Опыт работы</label>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <label class="lbl-long"><input type="checkbox" class="checkbox">Отображать вакансию на карте</label>            
+                            <select id="employee-experience" class="inp-experience inp-required">
+                                <option>Выберите...</option>
+                                <option value="1-2">1-2 года</option>
+                            </select>
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
 
-                    <div class="row-form">
+                    <div class="row-form">        
+                        <div class="col-form-1">
+                            <label class="lbl" id="employee-position">Должность:</label>
+                        </div><!-- /.col-form-1 -->
+                        <div class="col-form-2">
+                            <input type="text" placeholder="Напр.: Менеджер по продажам" class="inp-company-name inp-required" id="employee-position">
+                        </div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->
+
+                    <div class="row-form">  
+                        <div class="col-form-1">
+                            <label for="resume-salary" class="lbl">Желаемая З/П:</label>
+                        </div><!-- /.col-form-1 -->
+                        <div class="col-form-2">
+                            <div class="inp-salary-wrap">
+                                <input type="text" name="salary-min" class="number" id="resume-salary">
+                                руб./мес.
+                            </div>
+                            <label class="lbl lbl-long lbl-inline lbl-resume-dogovor"><input type="checkbox" class="checkbox">По договорённости</label>            
+                        </div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->
+
+                    <div class="row-form">  
                         <div class="col-form-1 col-form-nopad">
-                            <label for="vacancy-specialization" class="lbl">Специализации</label>
+                            <p class="lbl">Профессиональная область</p>
                         </div><!-- /.col-form-1 -->
                         <div class="col-form-2">
                             <a href="#" class="link-local">Указать профобласть</a>
-                            <p class="form-hint">Выберите от 1 до 5 разделов каталога, в которых будет отображаться вакансия.</p>
+
                             <input type="text" id="vacancy-specialization" class="inp-vacancy-specialization" placeholder="Поиск">
                             <ul class="list-vacancy-specializations" id="list-specializations">
                                 <li class="list-item">
@@ -767,169 +833,402 @@
                             </ul>
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
-
-                    <div class="row-form">  
-                        <div class="col-form-1">
-                            <p class="lbl">Заработная плата:</p>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <div class="inp-salary-wrap">
-                                <label for="vacancy-salary-min">от</label>
-                                <input type="text" name="salary-min" value="5000" class="number" id="vacancy-salary-min">
-                            </div>
-                            <div class="inp-salary-wrap">
-                                <label for="vacancy-salary-max">до</label>
-                                <input type="text" name="salary-max" value="10000" class="number" id="vacancy-salary-max">
-                                руб.
-                            </div>
-                            <label class="lbl-long lbl-inline"><input type="checkbox" class="checkbox">По договорённости</label>
-                            <p class="form-hint">Заработная плата указывается в МЕСЯЦ в руб.</p>
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label for="vacancy-description" class="lbl">Описание:</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <textarea id="vacancy-description">
-    Обязанности:
-
-
-    Требования:
-
-
-    Условия работы и компенсации:
-
-
-                            </textarea>
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-
-                    <div class="row-form">
-                        <div class="col-form-1"><label for="vacancy-education" class="lbl">Образование</label></div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <select id="vacancy-education">
-                                <option>Не имеет значения</option>
-                            </select>
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label for="vacancy-experience" class="lbl">Мин. опыт работы:</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <select id="vacancy-experience">
-                                <option>Без опыта работы</option>
-                            </select>
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label for="vacancy-schedule" class="lbl">График работы:</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <select id="vacancy-schedule">
-                                <option>Полный рабочий день</option>
-                            </select>
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label id="vacancy-language" class="lbl">Знание языка</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <select aria-labelledby="vacancy-language" class="input-language">
-                                <option>Не требуется</option>
-                                <option>Английский</option>
-                            </select>
-                            <select aria-labelledby="vacancy-language" class="input-language" disabled>
-                                <option>базовый</option>
-                                <option>чтение проф. литературы</option>
-                                <option>разговорный</option>
-                                <option>свободный</option>
-                            </select>
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label for="vacancy-driving-licence" class="lbl">Водительские права:</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <select id="vacancy-driving-licence">
-                                <option>Не обязательны</option>
-                            </select>
-
-                            <div class="lbl-long lbl-mg">
-                                <input type="checkbox" class="checkbox" id="vacancy-driving" disabled><label for="vacancy-driving">Обязательно наличие личного автомобиля</label>
-                            </div><!-- /.lbl-long -->
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-
-                    <h2 class="h-form">Контактная информация</h2>
-
-                    <div class="row-form">
-                        <div class="col-form-1 col-form-nopad">
-                            <label class="lbl" for="vacancy-anonym">Анонимная вакансия:</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">            
-                            <label class="lbl-long"><input type="checkbox" class="checkbox" id="vacancy-anonym">Опубликовать вакансию анонимно, без указания информации о компании.</label>
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label for="vacancy-name" class="lbl">Контактное лицо:</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <input type="text" id="vacancy-name" placeholder="Иванов Иван Иванович">
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label class="lbl" id="employer-tel">Телефоны</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2 col-form-tel">
-                            <div class="col-form-tel_wrap">
-                                <input type="tel" class="inp-tel" id="input-tel" placeholder="+7 (XXX) XX-XX-XXX" aria-labelledby="employer-tel">
-                                <button class="btn-del" type="button" title="Удалить телефон">Удалить номер телефона</button>
-                            </div><!-- /.col-form-tel_wrap -->
-                            <div class="col-form-tel_wrap">
-                                <input type="tel" class="inp-tel" id="input-tel" placeholder="+7 (XXX) XX-XX-XXX" aria-labelledby="employer-tel">
-                                <button class="btn-add" type="button" title="Добавить телефон">Добавить номер телефона</button>
-                            </div><!-- /.col-form-tel_wrap -->
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-
-                    <h2 class="h-form">Выберите пакет услуг</h2>
-
-                    <div class="form-package">
-                        <div class="input"><input type="radio" class="radio" name="package" id="package-hot" value="package-hot" checked></div>
-                        <div class="icon"><img src="images/icon-hot.png" alt="pic"></div>
-                        <div class="text">
-                            <label class="lbl" for="package-hot">Услуга "Горячая вакансия"</label>
-                            <p class="descr">Вакансия Публикация закрепляется вверху списка на 3 дня - <b>299Р</b></p>
-                        </div><!-- /.text -->
-                    </div><!-- /.form-package -->
-                    <div class="form-package">
-                        <div class="input"><input type="radio" class="radio" name="package" id="package-turbo" value="package-turbo"></div>
-                        <div class="icon"><img src="images/icon-turbo.png" alt="pic"></div>
-                        <div class="text">
-                            <label class="lbl" for="package-turbo">Услуга "Турбо вакансия"</label>
-                            <p class="descr">Вакансия Публикация закрепляется вверху списка на 7 дней - <b>599Р</b></p>
-                            <p class="descr">Выделение 7 дней в верху списка</p>
-                        </div><!-- /.text -->
-                    </div><!-- /.form-package -->    
                     
+                    <h2 class="h-form">Сведения о местах работы</h2>
+                    <p class="form-descript">Мы рекомендуем добавить 2-3 последних места работы. <br>
+                        Если Вы работаете на месте работы по настоящее время - оставьте поля окончания периода незаполненными!</p>
+                    
+                    <div class="b-form-topic">
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label class="lbl" id="lbl-period">Период:</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <div class="b-inp-period-wrp">
+                                    <div class="b-inp-period-i">
+                                        <select class="inp-period" aria-labelledby="lbl-period">
+                                            <option>1</option>
+                                        </select>
+                                        <select class="inp-period" aria-labelledby="lbl-period">
+                                            <option>2</option>
+                                        </select>
+                                    </div><!-- /.b-inp-period-i -->
+                                    <span class="b-inp-period-dash">–</span>
+                                    <div class="b-inp-period-i">
+                                        <select class="inp-period" aria-labelledby="lbl-period">
+                                            <option>3</option>
+                                        </select>
+                                        <select class="inp-period" aria-labelledby="lbl-period">
+                                            <option>4</option>
+                                        </select>
+                                    </div><!-- /.b-inp-period-i -->
+                                </div><!-- /.inp-working-places-wrp -->
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label for="employee-story-company-1" class="lbl">Компания:</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <input type="text" id="employee-story-company-1">
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label for="employee-story-position-1" class="lbl">Должность:</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <input type="text" id="employee-story-position-1">
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+                        
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label for="employee-story-duties-1" class="lbl">Должностные обязанности:</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <textarea id="employee-story-duties-1"></textarea>
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+
+                        <button type="button" title="Удалить это место работы" class="btn btn-del"><i class="fas fa-times"></i></button>
+                    </div><!-- /.b-form-topic -->    
+
+                    <div class="b-form-topic">
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label class="lbl" id="lbl-period">Период:</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <div class="b-inp-period-wrp">
+                                    <div class="b-inp-period-i">
+                                        <select class="inp-period" aria-labelledby="lbl-period">
+                                            <option>1</option>
+                                        </select>
+                                        <select class="inp-period" aria-labelledby="lbl-period">
+                                            <option>2</option>
+                                        </select>
+                                    </div><!-- /.b-inp-period-i -->
+                                    <span class="b-inp-period-dash">–</span>
+                                    <div class="b-inp-period-i">
+                                        <select class="inp-period" aria-labelledby="lbl-period">
+                                            <option>3</option>
+                                        </select>
+                                        <select class="inp-period" aria-labelledby="lbl-period">
+                                            <option>4</option>
+                                        </select>
+                                    </div><!-- /.b-inp-period-i -->
+                                </div><!-- /.inp-working-places-wrp -->
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label for="employee-story-company-1" class="lbl">Компания:</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <input type="text" id="employee-story-company-1">
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label for="employee-story-position-1" class="lbl">Должность:</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <input type="text" id="employee-story-position-1">
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+                        
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label for="employee-story-duties-1" class="lbl">Должностные обязанности:</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">
+                                <textarea id="employee-story-duties-1"></textarea>
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+
+                        <button type="button" title="Удалить это место работы" class="btn btn-del"><i class="fas fa-times"></i></button>
+                    </div><!-- /.b-form-topic -->
+
+                    <div class="row-form row-form-half">
+                        <a href="#" class="link-local">+ Добавить место работы</a>        
+                    </div><!-- /.row-form -->
+                    
+                    <div class="row-form">
+                        <div class="col-form-1">
+                            <label for="employee-skills" class="lbl lbl-bigger">Навыки и умения:</label>
+                        </div><!-- /.col-form-1 -->
+                        <div class="col-form-2">
+                            <textarea id="employee-skills" placeholder="Укажите Ваши ключевые навыки и умения по профессии"></textarea>
+                        </div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->
 
                     <div class="row-form">
-                        <button type="submit" class="btn btn-main">Опубликовать вакансию</button>            
-                        <a href="#" class="btn">Предварительный просмотр</a>        
+                        <div class="col-form-1">
+                            <label for="employee-about" class="lbl">Обо мне:</label>
+                        </div><!-- /.col-form-1 -->
+                        <div class="col-form-2">
+                            <textarea id="employee-about"></textarea>
+                        </div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->
+
+                    <h2 class="h-form">Образование</h2>
+
+                    <div class="row-form">
+                        <div class="col-form-1">
+                            <label for="employee-edu-level" class="lbl">Образование:</label>
+                        </div><!-- /.col-form-1 -->
+                        <div class="col-form-2">
+                            <select id="employee-edu-level" class="inp-edu-level inp-required">
+                                <option>Выберите пункт...</option>
+                                <option>Высшее</option>
+                            </select>
+                        </div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->
+
+                    <p class="form-descript">Мы рекомендуем добавить места среднего специального и высшего образования</p>
+                    
+                    <div class="b-form-topic">
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label for="employee-school" class="lbl">Учебное заведение:</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2" class="inp-required">                
+                                <input type="text" id="employee-school" class="inp-required">                
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label for="" class="lbl-inline">Уровень</label>/
+                                <label for="" class="lbl-inline">Дата окончания</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2 col-form-2-2cols">
+                                <select id="" class="inp-edu-level-add inp-required">
+                                    <option>Выберите пункт...</option>
+                                    <option>Высшее</option>
+                                </select>                                        
+                                <input type="date" id="employee-edu-finish-date" class="inp-edu-finish-date inp-required">                                
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label for="employee-edu-faculty" class="lbl">Факультет:</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">                
+                                <input type="text" id="employee-edu-faculty" class="inp-required">
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+
+                        <div class="row-form">
+                            <div class="col-form-1">
+                                <label for="employee-edu-speciality" class="lbl">Специальность:</label>
+                            </div><!-- /.col-form-1 -->
+                            <div class="col-form-2">                
+                                <input type="text" id="employee-edu-speciality" class="inp-required">                
+                            </div><!-- /.col-form-2 -->
+                        </div><!-- /.row-form -->
+
+                        <button type="button" title="Удалить это место обучения" class="btn btn-del"><i class="fas fa-times"></i></button>
+                    </div><!-- /.b-form-topic -->
+
+                    <div class="row-form row-form-half">
+                        <a href="#" class="link-local">+ Указать еще одно место обучения</a>        
+                    </div><!-- /.row-form -->
+
+                    <div class="row-form row-form-half">
+                        <a href="#" class="link-local">+ Курсы и сертификаты</a>        
+                    </div><!-- /.row-form -->
+
+                    <div class="b-form-topic--w">
+                        <h2 class="h-form">Курсы и сертификаты</h2>
+                        <p class="form-descript">Мы рекомендуем добавить наиболее значимые для данного резюме курсы.</p>
+                        
+                        <div class="b-form-topic">
+                            <div class="row-form">
+                                <div class="col-form-1">
+                                    <label for="vacancy-course-title" class="lbl">Название:</label>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">                
+                                    <input type="text" id="vacancy-course-title" class="inp-required">
+                                </div><!-- /.col-form-2 -->
+                            </div><!-- /.row-form -->
+
+                            <div class="row-form">
+                                <div class="col-form-1">
+                                    <label for="vacancy-course-place" class="lbl">Учебное заведение:</label>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">                
+                                    <input type="text" id="vacancy-course-place" class="inp-required">
+                                </div><!-- /.col-form-2 -->
+                            </div><!-- /.row-form -->
+
+                            <div class="row-form">
+                                <div class="col-form-1">
+                                    <label id="lbl-vacancy-course-finish-date" class="lbl">Дата окончания:</label>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">
+                                    <input type="date" class="inp-required inp-short">
+                                </div><!-- /.col-form-2 -->
+                            </div><!-- /.row-form -->
+
+                            <div class="row-form">
+                                <div class="col-form-1">
+                                    <label id="vacancy-course-period" class="lbl">Продолжительность:</label>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">
+                                    <select id="vacancy-course-period" class="inp-vacancy-course-period inp-short">
+                                        <option>Выберите пункт</option>
+                                        <option>1 неделя</option>
+                                    </select>
+                                </div><!-- /.col-form-2 -->
+                            </div><!-- /.row-form -->
+
+                            <button type="button" title="Удалить этот курс" class="btn btn-del"><i class="fas fa-times"></i></button>
+                        </div><!-- /.b-form-topic -->        
+
+                        <div class="row-form row-form-half">
+                            <a href="#" class="link-local">+ Указать ещё курс или сертификат</a>
+                        </div><!-- /.row-form -->
+                    </div><!-- /.b-form-topic--w -->
+
+                    <div class="row-form row-form-half">
+                        <a href="#" class="link-local">+ Рекомендации</a>
+                    </div><!-- /.row-form -->
+                    
+                    <div class="b-form-topic--w">
+                        <h2 class="h-form">Рекомендации</h2>
+                        <p class="form-descript">Добавьте одного или несколько человек, готовых Вас рекомендовать.</p>
+                        <div class="b-form-topic">
+                            <div class="row-form">
+                                <div class="col-form-1">
+                                    <label for="inp-vacancy-recom-name" class="lbl">ФИО:</label>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">                
+                                    <input type="text" id="inp-vacancy-recom-name" class="inp-required">
+                                </div><!-- /.col-form-2 -->
+                            </div><!-- /.row-form -->
+                            <div class="row-form">
+                                <div class="col-form-1">
+                                    <label for="inp-vacancy-recom-position" class="lbl">Должность:</label>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">                
+                                    <input type="text" id="inp-vacancy-recom-position" class="inp-required">
+                                </div><!-- /.col-form-2 -->
+                            </div><!-- /.row-form -->
+                            <div class="row-form">
+                                <div class="col-form-1">
+                                    <label for="inp-vacancy-recom-tel" class="lbl">Телефон:</label>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">                
+                                    <input type="text" id="inp-vacancy-recom-tel" class="inp-required">
+                                </div><!-- /.col-form-2 -->
+                            </div><!-- /.row-form -->
+                            <div class="row-form">
+                                <div class="col-form-1">
+                                    <label for="inp-vacancy-recom-email" class="lbl">E-mail:</label>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">                
+                                    <input type="text" id="inp-vacancy-recom-email" class="inp-required">
+                                </div><!-- /.col-form-2 -->
+                            </div><!-- /.row-form -->
+                            <div class="row-form">
+                                <div class="col-form-1">
+                                    <label for="inp-vacancy-recom-comment" class="lbl">Комментарий:</label>
+                                </div><!-- /.col-form-1 -->
+                                <div class="col-form-2">                
+                                    <input type="text" id="inp-vacancy-recom-comment">
+                                </div><!-- /.col-form-2 -->
+                            </div><!-- /.row-form -->
+                            <button type="button" title="Удалить эту рекомендацию" class="btn btn-del"><i class="fas fa-times"></i></button>            
+                        </div><!-- /.b-form-topic -->        
+                        <div class="row-form row-form-half">
+                            <a href="#" class="link-local">+ Указать еще рекомендацию</a>
+                        </div><!-- /.row-form -->
+                    </div><!-- /.b-form-topic--w -->
+                    
+                    <div class="row-form">
+                        <div class="col-form-1">
+                            <label id="resume-language" class="lbl">Знание ин. языков</label>
+                            <p class="form-hint">Если Вы знаете ин. языки, то выберите язык и уровень владения им и нажмите синюю кнопку добавленияя</p>
+                        </div><!-- /.col-form-1 -->        
+                        <div class="col-form-2">
+                            <div class="b-form-lang">
+                                <div class="col-form-2-2cols">
+                                    <select aria-labelledby="resume-language" class="input-language inp-required">
+                                        <option>выберите язык...</option>
+                                        <option>Английский</option>
+                                    </select>
+                                    <select aria-labelledby="resume-language" class="input-language inp-required" disabled>
+                                        <option>базовый</option>
+                                        <option>чтение проф. литературы</option>
+                                        <option>разговорный</option>
+                                        <option>свободный</option>
+                                    </select>
+                                </div><!-- /.col-form-2-2cols -->                
+                                <button class="btn btn-add" type="button" title="Добавить телефон">Добавить номер телефона</button>
+                            </div><!-- /.col-form-lang -->
+                            <div class="b-form-lang">
+                                <div class="col-form-2-2cols">
+                                    <select aria-labelledby="resume-language" class="input-language inp-required">
+                                        <option>выберите язык...</option>
+                                        <option>Английский</option>
+                                    </select>
+                                    <select aria-labelledby="resume-language" class="input-language inp-required" disabled>
+                                        <option>базовый</option>
+                                        <option>чтение проф. литературы</option>
+                                        <option>разговорный</option>
+                                        <option>свободный</option>
+                                    </select>
+                                </div><!-- /.col-form-2-2cols -->                
+                                <button class="btn btn-del" type="button" title="Удалить телефон">Удалить номер телефона</button>
+                            </div><!-- /.col-form-lang -->
+                        </div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->    
+                    
+                    <h2 class="h-form">Дополнительно</h2>
+                    <div class="b-form-resume-extra">
+                        <a href="#" class="link-local">+ Занятость</a>
+                        <a href="#" class="link-local">+ Ближайшая станция метро</a>
+                        <a href="#" class="link-local">+ Автомобиль</a>
+                        <a href="#" class="link-local">+ Категория прав</a>
+                        <a href="#" class="link-local">+ Курсы и сертификаты</a>
+                        <a href="#" class="link-local">+ Семейное положение</a>
+                        <a href="#" class="link-local">+ Фотография</a>
+                        <a href="#" class="link-local">+ Тест профориентации</a>
+                        <a href="#" class="link-local">+ Тест профориентации</a>
+                        <a href="#" class="link-local">+ Владение компьютером</a>
+                        <a href="#" class="link-local">+ Хобби</a>
+                        <a href="#" class="link-local">+ Дополнительная информация</a>
+                    </div><!-- /.b-form-resume-extra -->
+
+                    <div class="row-form">
+                        <div class="col-form-1">
+                            <label for="resume-move-towns" class="lbl">Готов(а) переехать:</label>
+                        </div><!-- /.col-form-1 -->
+                        <div class="col-form-2">
+                            <input type="text" id="resume-move-towns">
+                            <p class="form-hint">Города не выбраны. Для выбора города начните вводить название в текстовое поле. Если Вы готовы переехать в какие-либо города, начните вводить их названия в это поле. Из выпадающего списка выберите интересующий Вас город.</p>
+                        </div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->    
+                    <div class="row-form">
+                        <div class="col-form-1">
+                            <label for="resume-schedule" class="lbl">График и занятость:</label>
+                        </div><!-- /.col-form-1 -->
+                        <div class="col-form-2">
+                            <select name="" id="resume-schedule" class="inp-required">
+                                <option>Выберите вариант...</option>
+                            </select>
+                        </div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->
+
+                    <div class="row-form row-form-half">
+                        <button type="submit" class="btn btn-main">Опубликовать резюме</button>
                     </div><!-- /.row-form -->
                 </form>
             </div><!-- /.content-main -->

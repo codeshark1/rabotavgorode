@@ -68,8 +68,8 @@
     <div class="header-site__hero">
         <div class="container">
             <h1 class="hero-h">Работа в твоем городе</h1>
-            <div class="form-wrap">
-                <form role="search" class="form-search" action="/">
+            <div class="hero__form-wrap">
+                <form role="search" class="hero__form-search" action="/">
                     <select class="search-type">
                         <option>Вакансии</option>
                         <option>Резюме</option>
@@ -78,9 +78,9 @@
                     <input type="text" class="search-field" placeholder="Напр.: Менеджер по продажам" title="Поиск" role="combobox">
                     <button type="submit" class="search-submit btn btn-main" id="searchsubmit"><i class="fas fa-search"></i> Найти</button>
                 </form>
-                <div class="form-extra">
-                    <p class="search-links">Искать по: <a href="#">отраслям</a> / <a href="#">компаниям</a> / <a href="#">профессиям</a> / <a href="#">расширенный</a> / <a href="#">на карте</a> / <a href="#">вахтой</a></p>
-                    <a href="#" class="search-ext">Расширенный поиск</a>
+                <div class="hero__form-extra">
+                    <p class="hero__search-links">Искать по: <a href="#">отраслям</a> / <a href="#">компаниям</a> / <a href="#">профессиям</a> / <a href="#">расширенный</a> / <a href="#">на карте</a> / <a href="#">вахтой</a></p>
+                    <a href="#" class="hero__search-ext">Расширенный поиск</a>
                 </div><!-- /.form-extra -->
             </div><!-- /.header-site__form-wrap -->
         </div><!-- /.container -->
@@ -89,8 +89,8 @@
 
 <main class="main-content">
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 content-main">
+        <div class="row-mod">
+            <div class="content-main">
                 <section class="section-major">
                     <h2 class="h-sec">Работа в Москве</h2>
                     <ul class="list-columns-1">
@@ -291,10 +291,10 @@
                     </div><!-- /.row -->                    
                 </article>
             </div><!-- /.col -->
-            <aside class="col-md-2 sidebar-left">
+            <aside class="sidebar-left" id="sidebar-left">
                 <h3>Левый сайдбар</h3>
             </aside><!-- /.col -->
-            <aside class="col-md-2 sidebar-right">
+            <aside class="sidebar-right" id="sidebar-right">
                 <h3>Правый сайдбар</h3>
             </aside><!-- /.col -->
         </div><!-- /.row -->

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Регистрация работодателя</title>
+    <title>Разместить резюме</title>
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>    
@@ -70,11 +70,26 @@
     <div class="container">
         <div class="row-mod">
             <div class="content-main">
-                <h1 class="h-sec">Регистрация работодателя</h1>
+                <h1 class="h-sec">Разместить резюме</h1>
 
-                <p class="inp-required inp-required-demo">Поля отмеченные так являются обязательными для заполнения.</p>                                
                 <form action="#" class="form-main">
-                    <h2 class="h-form">Контактная информация</h2>
+                    <div class="row-form">
+                        <div class="col-form-1"><label for="employer-email" class="lbl">E-mail</label></div><!-- /.col-form-1 -->
+                        <div class="col-form-2">
+                            <input type="email" placeholder="name@gmail.com" id="employer-email">
+                            <p class="form-hint">Не будет публиковаться. Будет использоваться для восстановления пароля и уведомлений.</p>
+                        </div><!-- /.col-form-2 -->                        
+                    </div><!-- /.row-form -->                    
+                    
+                    <div class="row-form">
+                        <div class="col-form-1">
+                            <label for="employer-lastname" class="lbl">Фамилия</label>
+                        </div><!-- /.col-form-1 -->
+                        <div class="col-form-2">
+                            <input type="text" placeholder="Иванов" id="employer-lastname">
+                        </div><!-- /.col-form-2 -->
+                    </div><!-- /.row-form -->
+
                     <div class="row-form">
                         <div class="col-form-1">
                             <label for="employer-firstname" class="lbl">Имя</label>
@@ -83,84 +98,28 @@
                             <input type="text" placeholder="Иван" id="employer-firstname">
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label for="employer-lastname" class="lbl">Фамилия</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <input type="text" placeholder="Петров" id="employer-lastname">
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-                    <div class="row-form">
-                        <div class="col-form-1"><label for="employer-email" class="lbl">E-mail</label></div><!-- /.col-form-1 -->
-                        <div class="col-form-2"><input type="email" placeholder="name@gmail.com" id="employer-email"></div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label class="lbl" for="employer-tel">Номер телефона</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <input type="tel" class="inp-tel" id="employer-tel" placeholder="+7(___)__-__-___">
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label class="lbl" id="lbl-employer-company">Название компании</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2 col-form-company-name">
-                            <select name="" class="inp-company-type" aria-labelledby="lbl-employer-company">
-                                <option>ООО</option>
-                            </select>
-                            <input type="text" placeholder="Название" class="inp-company-name" aria-labelledby="lbl-employer-company">                            
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
+
                     <div class="row-form">
                         <div class="col-form-1"></div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <label class="checkbox"><input type="checkbox" class="checkbox">Кадровое агентство</label>
+                            <p class="form-hint">Нажимая "Зарегистрировать компанию" вы подтверждаете, что ознакомлены и полностью согласны с <a href="#">условиями использования сайта</a></p>                            
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
+
                     <div class="row-form">
-                        <div class="col-form-1">
-                            <label for="employer-url" class="lbl">Адрес сайта</label>
-                        </div><!-- /.col-form-1 -->
+                        <div class="col-form-1"></div><!-- /.col-form-1 -->
                         <div class="col-form-2">
-                            <input type="url" id="employer-url" placeholder="yandex.ru">
+                            <button type="submit" class="btn btn-main">Зарегистрироваться</button>
                         </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label for="employer-inn" class="lbl">ИНН Компании</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <input type="url" id="employer-inn" placeholder="012345678912">
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-                    <div class="row-form">
-                        <div class="col-form-1">
-                            <label for="employer-town" class="lbl">Город</label>
-                        </div><!-- /.col-form-1 -->
-                        <div class="col-form-2">
-                            <select id="employer-town">
-                                <option>Москва</option>
-                                <option>Санкт-Петербург</option>
-                            </select>
-                        </div><!-- /.col-form-2 -->
-                    </div><!-- /.row-form -->
-                    <div class="row-form row-form-half">
-                        <p class="form-hint">Нажимая "Зарегистрировать компанию" вы подтверждаете, что ознакомлены и полностью согласны с <a href="#">условиями использования сайта</a></p>                        
-                    </div><!-- /.row-form -->
-                    <div class="row-form row-form-half">
-                        <button type="submit" class="btn btn-main">Зарегистрировать компанию</button>                        
                     </div><!-- /.row-form -->
                 </form>
-            </div><!-- /.content-main -->
+            </div><!-- /.col -->
             <aside class="sidebar-left" id="sidebar-left">
                 <h3>Левый сайдбар</h3>
-            </aside><!-- /.sidebar-left -->
+            </aside><!-- /.col -->
             <aside class="sidebar-right" id="sidebar-right">
                 <h3>Правый сайдбар</h3>
-            </aside><!-- /.sidebar-right -->
+            </aside><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container -->
 </main><!-- /.main-content -->
