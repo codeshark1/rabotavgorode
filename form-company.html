@@ -82,8 +82,8 @@
                             <select class="inp-company-type" aria-labelledby="lbl-employer-company">
                                 <option>ООО</option>
                             </select>
-                            <input type="text" placeholder="Название" class="inp-company-name" aria-labelledby="lbl-employer-company">
-
+                            <input type="text" placeholder="Название" class="inp-company-name inp-required inp-invalid" aria-labelledby="lbl-employer-company">
+                            <p class="form-error">Поле названия не должно быть пустым</p>
                             <p class="form-hint">Введите только название, без формы собственности</p>
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
@@ -208,7 +208,7 @@
                         <div class="col-form-2">
                             <input type="file" name="company-docs" id="company-docs" class="inputfile">
                             <p class="form-hint">Cвидетельство о государственной регистрации юридического лица</p>
-                            <p class="form-error"><i class="fas fa-exclamation-triangle"></i> Чтобы продолжить работу на нашем сайте, предоставьте, пожалуйста, документы</p>
+                            <p class="form-error">Чтобы продолжить работу на нашем сайте, предоставьте, пожалуйста, документы</p>
                         </div><!-- /.col-form-2 -->
                     </div><!-- /.row-form -->
 

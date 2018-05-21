@@ -159,6 +159,7 @@ textarea {
   transition: all .3s ease-in-out;
   box-shadow: inset 1px 1px 5px 0 rgba(#000, .05);
 }
+select {padding: 8px 4px;}
 textarea {
   resize: vertical;
   margin-bottom: 8px; 
@@ -176,7 +177,10 @@ textarea:focus {
   border: 1px solid $link-text;
 }
 input[type="number"] {padding-right: 0;}
-select {padding: 8px 4px;}
+
+input:disabled, select:disabled {
+  background: $gray-light;
+}
 label {cursor: pointer;}
 label.checkbox {display: block;}
 input.checkbox, input.radio {margin: 0 8px 0 0; vertical-align: baseline;}
@@ -221,6 +225,10 @@ fieldset {
 }
 .inp-required {
 	border-left: 2px solid $action !important;
+}
+.inp-invalid {
+  border:1px solid red !important;
+  box-shadow: 0 0 5px 0 red !important;
 }
 
 .b-inputs {

@@ -420,7 +420,7 @@ a {
 .inp-company-type {
 	width: 65px;
 	position: absolute;
-	left: 8px; top: 1px;
+	left: 10px; top: 1px;
 	height: 33px;
 	padding: 0 0 0 4px;
 }
@@ -436,7 +436,14 @@ a {
 	&:first-child {margin-top: 0;}
 }
 .form-hint {color: $gray;}
-.form-error {color: red;}
+.form-error {
+	color: red;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16px' height='16px' color='red'%3E%3Cpath fill='currentColor' d='M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z'%3E%3C/path%3E%3C/svg%3E") no-repeat 0 50%;
+	padding-left: 20px;
+	min-height: 16px;
+	display: flex;
+	align-items: center;
+}
 
 
 .col-form-tel {clear: both;}
